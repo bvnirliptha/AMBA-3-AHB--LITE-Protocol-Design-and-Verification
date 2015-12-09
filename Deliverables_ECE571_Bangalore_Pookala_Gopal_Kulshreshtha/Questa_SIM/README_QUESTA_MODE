@@ -1,0 +1,34 @@
+README File For QuestaSim Simulation
+Title of the Project: Design & Implementation of AHB-Lite Protocol
+Team: 	Arjun Gopal 		<arjgopal@pdx.edu>
+		Nirliptha Bangalore	<nir2@pdx.edu>
+		Shrikrishna Pookala	<spookala@pdx.edu>
+		Udit Kulshreshtha	<udit@pdx.edu>
+
+
+Files Included in the folder:
+
+	Design Files
+	1. AHB_Interface.sv
+	2. AHBSlave.sv
+	3. AHBSlave_Top.sv
+	4. definesPkg.sv
+	5. Top_tb.sv
+	6. Assertions.sv
+
+To Run - without injecting errors into the design
+	
+	vlog AHB_Interface.sv AHBSlave.sv AHBSlave_Top.sv definesPkg.sv Top_tb.sv Assertions.sv
+	vsim top
+	run -all
+	quit -sim 
+	
+	//quit -sim will display the assertions scoreboard
+	
+To Run - by injecting errors into the design
+	vlog +define+ERROR_INJECT AHB_Interface.sv AHBSlave.sv AHBSlave_Top.sv definesPkg.sv Top_tb.sv Assertions.sv
+	vsim top
+	run -all
+	quit -sim 
+	
+	//quit -sim will display the assertions scoreboard

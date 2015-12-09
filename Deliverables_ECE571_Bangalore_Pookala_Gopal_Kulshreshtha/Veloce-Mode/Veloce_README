@@ -1,0 +1,46 @@
+README File For Veloce & Puresim
+Title of the Project: Design & Implementation of AHB-Lite Protocol
+Team: 	Arjun Gopal 		<arjgopal@pdx.edu>
+		Nirliptha Bangalore	<nir2@pdx.edu>
+		Shrikrishna Pookala	<spookala@pdx.edu>
+		Udit Kulshreshtha	<udit@pdx.edu>
+
+
+Files Included in the folder:
+
+	Design Files
+	1. AHBInterface.sv
+	2. AHBSlaveMemory.sv
+	3. AHBSlave_Top.sv
+	4. top_hdl.sv
+	5. top_tb.sv
+
+	Config File	
+	1. veloce.config
+	
+	Makefile
+	1. Makefile
+	
+To Run in Puresim Mode:
+	make -f Makefile MODE=puresim
+	
+To Run in Veloce Mode:
+	make -f Makefile
+		
+	
+Description:
+To get the design running on veloce, we had to remove few non-synthesizable portions of the protocol and code. The goal of the veloce
+portion of our project was to make the environment synthesizable and run on veloce. 
+
+Verification:
+Since assertions module was removed, the design can be verified be writing & reading from the subsequent address.
+The checker module has been implemented in the top_tb & can work only for the current environment configuration.
+
+
+Features of protocol implemented:	
+		Basic Read, Write, Burst Read, Burst Write for length of 4.
+		Busy & wait states capability not implemented.
+		Configurable No of Slaves; Presently configured to work with 2 slaves; Limit on No of Slaves to 4
+		Slave has Read only addresses.
+
+	
